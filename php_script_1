@@ -1,0 +1,35 @@
+
+<?php
+
+class sample_class
+{
+  public function func_having_static_var($x = NULL)
+  {
+    static $var = 0;
+    if ($x === NULL)
+    { return $var; }
+    $var = $x;
+  }
+}
+
+$a = new sample_class();
+$b = new sample_class();
+
+echo $a->func_having_static_var()."\n";
+echo $b->func_having_static_var()."\n";
+// this will output (as expected):
+//  0
+//  0
+
+$a->func_having_static_var(3);
+
+echo $a->func_having_static_var()."\n";
+echo $b->func_having_static_var()."\n";
+// this will output:
+//  3
+//  3
+// maybe you expected:
+//  3
+//  0
+
+?>
