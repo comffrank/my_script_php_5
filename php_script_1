@@ -1,4 +1,4 @@
-
+#####
 <?php
 
 class sample_class
@@ -33,3 +33,4 @@ echo $b->func_having_static_var()."\n";
 //  0
 
 ?>
+#####
